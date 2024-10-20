@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<title>Mukul's Company Home Page</title>
+</head>
+<body>
+
+	<h2>Mukul's Home Page</h2>
+	<hr>
+	Yoo!! Welcome to the Mukul's Company Home Page!! 
+
+	<hr>
+	
+	<!-- Add a link to point leaders... this is for the Managers -->
+	<p sec:authorize="{hasRole('MANAGER')}">
+		<a th:href="@{/leaders}">Leadership Meeting</a>
+		(Only for Manager Peeps)
+	</p>
+	<!-- Add a link to point systems... this is for the Admins -->
+	<p sec:authorize="{hasRole('ADMIN')}">
+		<a th:href="@{/systems}">Systems page</a>
+		(Only for Admin Peeps)
+	</p>
+	
+	<hr>
+	
+	<!-- Display User Ids and associated roles -->
+	
+	<p>
+	
+		User: <span sec:authentication="principal.username"></span>
+		<br><br>
+		Role(s): <span sec:authentication="principal.authorities"></span>
+	
+	</p>
+
+	<br><br>
+
+	<form action="#" th:action="@{/logout}" method="POST" >
+		<input type="submit" value="Logout" />
+	</form>
+</body>
+</html>

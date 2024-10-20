@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="20-restcruddemo-spring-data-JPA/src/main/java"/>
+	<classpathentry kind="src" path="20-restcruddemo-spring-data-JPA/src/test/java"/>
+	<classpathentry kind="src" path="restcruddemo/src/main/java"/>
+	<classpathentry kind="src" path="restcruddemo/src/test/java"/>
+	<classpathentry kind="output" path="20-restcruddemo-spring-data-JPA/target/classes"/>
+</classpath>
